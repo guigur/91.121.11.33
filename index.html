@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style-de-ouf.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="ip">
+                <div class="number n1" style="animation-delay: -2.2s;">9</div>
+                <div class="number n2" style="animation-delay: -2.0s;">1</div>
+                <div class="number n3" style="animation-delay: -1.8s;">.</div>
+                <div class="number n4" style="animation-delay: -1.6s;">1</div>
+                <div class="number n5" style="animation-delay: -1.4s;">2</div>
+                <div class="number n6" style="animation-delay: -1.2s;">1</div>
+                <div class="number n7" style="animation-delay: -1.0s;">.</div>
+                <div class="number n8" style="animation-delay: -0.8s;">1</div>
+                <div class="number n9" style="animation-delay: -0.6s;">1</div>
+                <div class="number n10" style="animation-delay: -0.4s;">.</div>
+                <div class="number n11" style="animation-delay: -0.2s;">3</div>
+                <div class="number n12" style="animation-delay: 0.0s;">3</div>
+            </div>
+            <div class="content">
+                <h1>A nice server</h1>
+                <p>
+                    <span><a href="https://twitter.com/guigur" target="_blank"><i class="fa fa-twitter"></i></a></span>
+                    <span><a href="https://github.com/guigur/" target="_blank"><i class="fa fa-github"></i></a></span>
+                    <span><a href="https://youtube.com/MrGuigur/" target="_blank"><i class="fa fa-youtube-play"></i></a></span>
+                    <span><a href="https://www.linkedin.com/in/guillaume-arthaud-837637137/" target="_blank"><i class="fa fa-linkedin"></i></a></span>
+                </p>
+                <h2>Serices</h2>
+                <p>
+                    <span><a href="https://guigur.com" target="_blank">guigur.com</a></span>&bull;
+                    <span><a href="https://lifesanctuary-game.com" target="_blank">lifesanctuary-game.com</a></span>&bull;
+                    <span><a href="https://ecoticket.eu" target="_blank">ecoticket.eu</a></span>&bull;
+                    <span><a href="https://neuro-training-alg.com" target="_blank">neuro-training-alg.com</a></span>&bull;
+                    <span><a href="https://jeej.guigur.com" target="_blank">jeej.guigur.com</a></span>&bull;
+                    <span><a href="https://lilian-tes-bo.com" target="_blank">lilian-tes-bo.com</a></span>&bull;
+                    <span><a href="http://tes-bo.com" target="_blank">tes-bo.com</a></span>&bull;
+                    <span><a href="https://margoulin.org" target="_blank">margoulin.org</a></span>&bull;
+                    <span><a href="http://emdel.fr" target="_blank">emdel.fr</a></span>&bull;
+                    <span><a href="https://piecesporschearthaud.com" target="_blank">piecesporschearthaud.com</a></span>&bull;
+                </p>
+            </div>
+        </div>
+        <script>
+            function getRandomColor() {
+                $hue = Math.floor(Math.random() * 360);
+                $color = 'hsl(' + $hue + ', 100%, 80.5%)';
+                return $color;
+            }
+
+            function title() {
+                $color = getRandomColor();
+                $delay = 30;
+                $totDelay = 0;
+                $(".n1").delay($totDelay).animate({color: $color}, 'slow');
+                $(".n2").delay($totDelay=$totDelay+$delay).animate({color: $color}, 'slow');
+                $(".n3").delay($totDelay=$totDelay+$delay).animate({color: $color}, 'slow');
+                $(".n4").delay($totDelay=$totDelay+$delay).animate({color: $color}, 'slow');
+                $(".n5").delay($totDelay=$totDelay+$delay).animate({color: $color}, 'slow');
+                $(".n6").delay($totDelay=$totDelay+$delay).animate({color: $color}, 'slow');
+                $(".n7").delay($totDelay=$totDelay+$delay).animate({color: $color}, 'slow');
+                $(".n8").delay($totDelay=$totDelay+$delay).animate({color: $color}, 'slow');
+                $(".n9").delay($totDelay=$totDelay+$delay).animate({color: $color}, 'slow');
+                $(".n10").delay($totDelay=$totDelay+$delay).animate({color: $color}, 'slow');
+                $(".n11").delay($totDelay=$totDelay+$delay).animate({color: $color}, 'slow');
+                $(".n12").delay($totDelay=$totDelay+$delay).animate({color: $color}, 'slow');
+
+                setTimeout(title, 600);
+            }
+            $( document ).ready(function () {
+            title();
+            });
+
+
+/*
+
+            $colors = new Array(
+                [62,35,255],
+                [60,255,60],
+                [255,35,98],
+                [45,175,230],
+                [255,0,255],
+                [255,128,0]);
+
+            $step = 0;
+            $colorIndices = [0,1,2,3];
+            $gradientSpeed = 0.002;
+
+            function updateGradient()
+            {
+
+                if ( $===undefined ) return;
+
+                var c0_0 = colors[colorIndices[0]];
+                var c0_1 = colors[colorIndices[1]];
+                var c1_0 = colors[colorIndices[2]];
+                var c1_1 = colors[colorIndices[3]];
+
+                var istep = 1 - step;
+                var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+                var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+                var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+                var color1 = "rgb("+r1+","+g1+","+b1+")";
+
+                var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+                var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+                var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+                var color2 = "rgb("+r2+","+g2+","+b2+")";
+
+                $('#gradient').css({
+                    background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
+                    background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+
+                step += gradientSpeed;
+                if ( step >= 1 )
+                {
+                    step %= 1;
+                    colorIndices[0] = colorIndices[1];
+                    colorIndices[2] = colorIndices[3];
+
+                    //pick two new target color indices
+                    //do not pick the same as the current one
+                    colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+                    colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+
+                }
+            }
+
+            setInterval(updateGradient,10);*/
+        </script>
+    </body>
+</html>
