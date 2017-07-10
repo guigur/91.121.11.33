@@ -5,6 +5,7 @@ html {
     padding: 0;
     font-family: 'Helvetica', sans-serif;
     color: #eeeeee;
+    background-color: #424242;
 }
 
 @font-face {
@@ -42,8 +43,20 @@ span a {
     transition: all 0.4s ease-in-out;
 }
 
-span a:hover {
-     color: #ffffff;
+.youtube:hover {
+    color: #ce1b16;
+}
+
+.linkedin:hover {
+    color: #0077b5;
+}
+
+.twitter:hover {
+    color: #00a9f3;
+}
+
+.github:hover {
+    color: #24292e;
 }
 
 @keyframes float {
