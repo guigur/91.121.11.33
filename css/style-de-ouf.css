@@ -27,12 +27,17 @@ h2 {
     color: #eeeeee;
 }
 
+h3 {
+    font-size: 14px;
+    margin: 10px 0 0 0;
+    font-weight: lighter;
+    color: #eeeeee;
+}
+
 p {
     font-size: 12px;
     font-weight: normal;
-
     color: #eeeeee;
-
 }
 
 span a {
@@ -99,4 +104,30 @@ span a {
     max-width: 600px;
     padding: 20px 40px;
     text-align: center;
+}
+
+.paypal_but {
+  font-size: 48px;
+  cursor: pointer;
+}
+
+.button-nobg {
+  background-color: Transparent;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
+form {
+  padding-top: 100px;
+}
+
+button[type="submit"] {
+  color: #cccccc;
+  transition: all 0.4s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  color: #005ea6;
 }
