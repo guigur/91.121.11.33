@@ -5,8 +5,8 @@ html {
     padding: 0;
     font-family: 'Helvetica', sans-serif;
     color: #eeeeee;
+    background: hotpink;
     transition: background-color 1.2s linear;
-    background-color: red;
 }
 
 
@@ -125,11 +125,22 @@ form {
   padding-top: 100px;
 }
 
-button[type="submit"] {
+.paypal-button {
   color: #cccccc;
   transition: all 0.4s ease-in-out;
 }
 
-button[type="submit"]:hover {
+.paypal-button:hover {
   color: #005ea6;
+}
+
+.github-banner-container {
+    position: absolute;
+    right:0;
+    top:0;
+}
+
+.link-no-style
+{
+    text-decoration: none;
 }

@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>guigur.com services</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style-de-ouf.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
-  <link rel="icon" id="favicon" href="" type="image/png" sizes="32x32">
-</head>
+  <head>
+    <title>guigur.com services</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style-de-ouf.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+    <link rel="icon" id="favicon" href="" type="image/png" sizes="32x32">
+    <canvas id="canvas1" width="32" height="32"></canvas>
+  </head>
 <body>
+<div class="github-banner-container">
+  <a href="https://github.com/guigur/91.121.11.33">
+    <img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1">
+  </a>
+</div>
   <div class="container">
     <div class="ip">
       <div class="number n1" style="animation-delay: -2.2s;">9</div>
@@ -27,7 +32,7 @@
       <div class="number n12" style="animation-delay: 0.0s;">3</div>
     </div>
     <div class="content">
-      <h1>A nice server</h1>
+      <h1 id="catchphrase">catchphrase</h1>
       <p>
         <span><a href="https://twitter.com/guigur" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a></span>
         <span><a href="https://github.com/guigur/" class="github" target="_blank"><i class="fa fa-github"></i></a></span>
@@ -35,26 +40,15 @@
         <span><a href="https://www.linkedin.com/in/guillaume-arthaud-837637137/" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></span>
       </p>
       <h2>Services</h2>
-      <p>
-        <span><a href="https://guigur.com" target="_blank">guigur.com</a></span>&bull;
-        <span><a href="https://jeej.guigur.com" target="_blank">jeej.guigur.com</a></span>&bull;
-        <span><a href="https://lilian-tes-bo.com" target="_blank">lilian-tes-bo.com</a></span>&bull;
-        <span><a href="http://tes-bo.com" target="_blank">tes-bo.com</a></span>&bull;
-        <span><a href="https://margoulin.org" target="_blank">margoulin.org</a></span>&bull;
-      </p>
-      <canvas id="canvas1" width="32" height="32"></canvas>
-
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick">
-        <input type="hidden" name="hosted_button_id" value="UXQQEXP5HS8KY">
-        <button type="submit" name="submit" class="button-nobg" alt="PayPal, le réflexe sécurité pour payer en ligne">
-                    <i class="fa fa-paypal paypal_but"></i>
-                  </button>
-        <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
-      </form>
-      <h3>Offrez moi un café ;-)</h3>
+      <p id="servicesList"></p>
+      <a href="https://www.paypal.me/guigur" class="link-no-style paypal-button" alt="PayPal, le réflexe sécurité pour payer en ligne">
+        <i class="fa fa-paypal paypal_but"></i>
+        <h3>Offrez moi un café 😊</h3>
+      </a>
     </div>
   </div>
+  <script type="text/javascript" src="Catchphrase.js"></script>
+  <script type="text/javascript" src="Services.js"></script>
   <script>
       var ip_chars = ["9","1",".","1","2","1",".","1","1",".","3","3","!"];
       var ip_space = ["7","7","12","7","7","7","12","7","7","12","7","7","12"];
@@ -70,6 +64,18 @@
       $(document).ready(function()
       {
         $("#canvas1").hide();
+        var randomCatchphrase = catchphrases[Math.floor(Math.random()*catchphrases.length)];
+        $("#catchphrase").text(randomCatchphrase);
+        var i;
+        for(i = 0; i < services.list.length;i++)
+        {
+          $("#servicesList").append('<span><a href="' + services.list[i].url + '" target="_blank">' + services.list[i].name + '</a></span>');
+          if (i < services.list.length - 1)
+          {
+            $("#servicesList").append('&bull;');
+          }
+        }
+        console.log("I lied, there is no easter eggs here");
       });
 
       window.setInterval(function()
@@ -96,12 +102,16 @@
           count++;
         else
           count = 0;
-        if (pair == 0) {
-          $("body").css("background-color", getRandomColor(35));
-          pair++;
-        } else {
-          pair =0;
-        }
+
+        if (pair == 0)
+          {
+            $("body").css("background-color", getRandomColor(35));
+            pair++;
+          }
+        else
+          {
+            pair = 0;
+          }
       }, 600);
 
   function convert(svgtext) {
