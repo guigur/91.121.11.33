@@ -5,7 +5,6 @@ var catchphrases = [
     "Fork me on github !",
     "Now with 2 times more colors",
     "apt-get install cool-server",
-    "Unicorn line website",
+    "Unicorn like website",
     "Dev mode for easter eggs",
-
 ];
